@@ -32,7 +32,7 @@ public class UtilisateurDao {
     public ArrayList<Utilisateur> getAll() {
 
         try {
-            String query = "SELECT * FROM etudiant ";
+            String query = "SELECT * FROM utilisateur ";
             PreparedStatement ps = this.connexion.prepareStatement(query);
             ResultSet res = ps.executeQuery();
 
@@ -58,7 +58,7 @@ public class UtilisateurDao {
     public void insertUtilisateur(Utilisateur u) {
         try {
 
-            String query = "insert into etudiant(nom,prenom,email,mdp) VALUES (?,?,?,?)";
+            String query = "insert into utilisateur(nom,prenom,email,mdp) VALUES (?,?,?,?)";
 
             PreparedStatement ps = this.connexion.prepareStatement(query);
             ps.setString(1, u.getNom());
@@ -85,7 +85,7 @@ public class UtilisateurDao {
      public void UpdateUtilisateur(Utilisateur ut) {
         try {
 
-            String query = "UPDATE etudiant SET nom = ?,prenom = ?,email = ?,mdp = ? WHERE id = ?";
+            String query = "UPDATE utilisateur SET nom = ?,prenom = ?,email = ?,mdp = ? WHERE id = ?";
 
             PreparedStatement ps = this.connexion.prepareStatement(query);
             
@@ -114,7 +114,7 @@ public class UtilisateurDao {
      public void deleteUtilisateur(Integer id) {
         try {
 
-            String query = "DELETE FROM etudiant WHERE id = ?" ;
+            String query = "DELETE FROM utilisateur WHERE id = ?" ;
 
             PreparedStatement ps = this.connexion.prepareStatement(query);
             
