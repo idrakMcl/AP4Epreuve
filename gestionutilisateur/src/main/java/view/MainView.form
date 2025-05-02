@@ -40,7 +40,7 @@
                   </Group>
               </Group>
               <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="31" max="32767" attributes="0"/>
+              <EmptySpace pref="47" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -90,7 +90,7 @@
     </Container>
     <Component class="javax.swing.JButton" name="ajoutUtilisateur">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ajouter un utilisateurrrrr"/>
+        <Property name="text" type="java.lang.String" value="Ajouter un utilisateur"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ajoutUtilisateurActionPerformed"/>

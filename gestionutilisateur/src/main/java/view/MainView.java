@@ -66,7 +66,7 @@ public class MainView extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(listeUser);
 
-        ajoutUtilisateur.setText("Ajouter un utilisateurrrrr");
+        ajoutUtilisateur.setText("Ajouter un utilisateur");
         ajoutUtilisateur.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ajoutUtilisateurActionPerformed(evt);
@@ -104,7 +104,7 @@ public class MainView extends javax.swing.JFrame {
                             .addComponent(modifierButton1))
                         .addGap(47, 47, 47)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
