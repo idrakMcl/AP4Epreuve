@@ -34,7 +34,9 @@ public class MainView extends javax.swing.JFrame {
 
     public void setTableModel(AbstractTableModel tableModel) {
         this.listeUser.setModel(tableModel);
+        this.listeUser.removeColumn(this.listeUser.getColumn("id"));
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -150,23 +152,24 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton modifierButton1;
     // End of variables declaration//GEN-END:variables
 
-    public Integer getSelectedIdModifier(){
-        return (Integer) this.listeUser.getModel().getValueAt(this.listeUser.getSelectedRow(),0);
-        
-        }
-    
-        public String getSelectedNomModifier(){
-        return (String) this.listeUser.getModel().getValueAt(this.listeUser.getSelectedRow(),1);
-        
-        }
-        
-        public String getSelectedprenomModifier(){
-        return (String) this.listeUser.getModel().getValueAt(this.listeUser.getSelectedRow(),2);
-        
-        }
-        public String getSelectedEmailModifier(){
-        return (String) this.listeUser.getModel().getValueAt(this.listeUser.getSelectedRow(),3);
-        
-        }
-    
+    public Integer getSelectedIdModifier() {
+        return (Integer) this.listeUser.getModel().getValueAt(this.listeUser.getSelectedRow(), 0);
+
+    }
+
+    public String getSelectedNomModifier() {
+        return (String) this.listeUser.getModel().getValueAt(this.listeUser.getSelectedRow(), 1);
+
+    }
+
+    public String getSelectedprenomModifier() {
+        return (String) this.listeUser.getModel().getValueAt(this.listeUser.getSelectedRow(), 2);
+
+    }
+
+    public String getSelectedEmailModifier() {
+        return (String) this.listeUser.getModel().getValueAt(this.listeUser.getSelectedRow(), 3);
+
+    }
+
 }

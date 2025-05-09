@@ -55,6 +55,9 @@ public class AjoutDialog extends javax.swing.JDialog {
         nomTextField1 = new javax.swing.JTextField();
         prenomTextField1 = new javax.swing.JTextField();
         emailTextField2 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -65,48 +68,73 @@ public class AjoutDialog extends javax.swing.JDialog {
             }
         });
 
-        nomTextField1.setText("nom");
+        nomTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nomTextField1ActionPerformed(evt);
+            }
+        });
 
-        prenomTextField1.setText("prenom");
         prenomTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 prenomTextField1ActionPerformed(evt);
             }
         });
 
-        emailTextField2.setText("email");
+        emailTextField2.setText("@");
+        emailTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailTextField2ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("nom");
+
+        jLabel2.setText("prenom");
+
+        jLabel3.setText("email");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(10, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(49, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAjouter)
-                    .addComponent(emailTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
-                    .addComponent(prenomTextField1)
-                    .addComponent(nomTextField1))
-                .addContainerGap(201, Short.MAX_VALUE))
+                    .addComponent(emailTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(prenomTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nomTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(102, 102, 102))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(nomTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nomTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(prenomTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addGap(18, 18, 18)
-                .addComponent(prenomTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addComponent(emailTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emailTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addComponent(btnAjouter)
-                .addGap(117, 117, 117))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 // creation Méthode pour récupere les info d'ajout*
-
+    
     public  String getNom(){
     
         return nomTextField1.getText();
@@ -120,6 +148,14 @@ public class AjoutDialog extends javax.swing.JDialog {
     public  String getEmail(){
     
         return emailTextField2.getText();
+    }
+    
+    public void setValeursParsDefaut(){
+    
+        this.nomTextField1.setText("");
+        this.prenomTextField1.setText("");
+        this.emailTextField2.setText("");
+    
     }
     
     private void btnAjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjouterActionPerformed
@@ -154,6 +190,14 @@ public class AjoutDialog extends javax.swing.JDialog {
     private void prenomTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prenomTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_prenomTextField1ActionPerformed
+
+    private void nomTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nomTextField1ActionPerformed
+
+    private void emailTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailTextField2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,6 +244,9 @@ public class AjoutDialog extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnAjouter;
     private javax.swing.JTextField emailTextField2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField nomTextField1;
     private javax.swing.JTextField prenomTextField1;
     // End of variables declaration//GEN-END:variables

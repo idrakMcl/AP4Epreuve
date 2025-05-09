@@ -30,7 +30,7 @@ public class UserListModel extends AbstractTableModel {
           this.utilisateurs =  uDao.getAll();
     }
 
-    public String getColumnNames(int column) {
+    public String getColumnName(int column) {
         return this.columnNames[column];
     }
 
@@ -76,7 +76,7 @@ public class UserListModel extends AbstractTableModel {
         Utilisateur i = utilisateurs.get(rowIndex);
         switch (columnIndex) {
             case 0:
-                return i.getId();
+                return i.getId();                
             case 1:
                 return i.getNom();
             case 2:

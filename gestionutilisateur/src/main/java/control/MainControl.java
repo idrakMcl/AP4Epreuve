@@ -44,6 +44,8 @@ public class MainControl implements PropertyChangeListener {
         this.view.addPropertyChangeListener(this);
         // On passe le JTableModel à la vue (2)
         this.view.setTableModel(userListModel);
+        
+      
     }
     
     
@@ -58,8 +60,10 @@ public class MainControl implements PropertyChangeListener {
         switch (evt.getPropertyName()) {
 
             case "btnAjoutUtilisateurClick":
+                this.ajoutDialog.setValeursParsDefaut();
                 this.ajoutDialog.setVisible(true);
                 break;
+                
 
             case "btnAjouterClick":
                 String nom = this.ajoutDialog.getNom();
@@ -69,6 +73,7 @@ public class MainControl implements PropertyChangeListener {
                 this.userListModel.createUtilisateur(nom, prenom, email);
 
                 this.ajoutDialog.setVisible(false);
+                
                 break;
             case  "btnModifierUtilisateurClick":
                 this.modifDialog.setId(view.getSelectedIdModifier());
