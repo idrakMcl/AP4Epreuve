@@ -178,5 +178,9 @@ public class MainView extends javax.swing.JFrame {
         return (String) this.listeUser.getModel().getValueAt(this.listeUser.getSelectedRow(), 3);
 
     }
+    public String getSelectedCommuneModifier() {
+        return (String) this.listeUser.getModel().getValueAt(this.listeUser.getSelectedRow(), 4);
+
+    }
 
 }

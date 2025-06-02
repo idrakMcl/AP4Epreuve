@@ -14,20 +14,23 @@ public class Utilisateur {
     private String prenom;
     private String email;
     private int id;
+    private String commune;
 
-    public Utilisateur(int id, String nom, String prenom, String email) {
+    public Utilisateur(int id, String nom, String prenom, String email, String commune) {
 
         this.nom = nom;
         this.prenom = prenom;
         this.id = id;
-        this.email=email;
+        this.email = email;
+        this.commune = commune;
     }
-    
-    public Utilisateur( String nom, String prenom, String email) {
+
+    public Utilisateur(String nom, String prenom, String email,String commune) {
 
         this.nom = nom;
         this.prenom = prenom;
-        this.email=email;
+        this.email = email;
+        this.commune = commune;
     }
 
     public void setId(int id) {
@@ -60,6 +63,10 @@ public class Utilisateur {
 
     public int getId() {
         return id;
+    }
+
+    public String getCommune() {
+        return commune;
     }
 
 }

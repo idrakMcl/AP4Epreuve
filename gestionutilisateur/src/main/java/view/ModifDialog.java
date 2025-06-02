@@ -55,6 +55,8 @@ public class ModifDialog extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         valideModifToggleButton1 = new javax.swing.JToggleButton();
+        communeTextField1 = new javax.swing.JTextField();
+        communeLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -83,6 +85,8 @@ public class ModifDialog extends javax.swing.JDialog {
             }
         });
 
+        communeLabel4.setText("Commune");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -92,15 +96,17 @@ public class ModifDialog extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+                    .addComponent(jLabel3)
+                    .addComponent(communeLabel4))
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(valideModifToggleButton1)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(communeTextField1, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(emailTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
                         .addComponent(prenomTextField2)
                         .addComponent(nomTextField1)))
-                .addContainerGap(190, Short.MAX_VALUE))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,7 +123,11 @@ public class ModifDialog extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emailTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addGap(40, 40, 40)
+                .addGap(2, 2, 2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(communeTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(communeLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(valideModifToggleButton1)
                 .addContainerGap(76, Short.MAX_VALUE))
         );
@@ -187,6 +197,12 @@ public class ModifDialog extends javax.swing.JDialog {
             
         }
         
+        public void setCommune(String commune){
+        
+             this.communeTextField1.setText(commune);
+            
+        }
+        
         public String getNom(){
         
             return this.nomTextField1.getText();
@@ -204,7 +220,11 @@ public class ModifDialog extends javax.swing.JDialog {
             return this.emailTextField3.getText();
             
         }
+        public String getCommune(){
         
+            return this.communeTextField1.getText();
+            
+        }
     /**
      * @param args the command line arguments
      */
@@ -248,6 +268,8 @@ public class ModifDialog extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel communeLabel4;
+    private javax.swing.JTextField communeTextField1;
     private javax.swing.JTextField emailTextField3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

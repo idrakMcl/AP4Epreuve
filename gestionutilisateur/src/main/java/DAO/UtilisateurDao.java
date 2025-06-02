@@ -32,7 +32,7 @@ public class UtilisateurDao {
     public ArrayList<Utilisateur> getAll() {
 
         try {
-            String query = "SELECT * FROM utilisateur ";
+            String query = "SELECT * FROM utilisateur ORDER BY commune ASC ";
             PreparedStatement ps = this.connexion.prepareStatement(query);
             ResultSet res = ps.executeQuery();
 
@@ -43,9 +43,10 @@ public class UtilisateurDao {
                 String nom = res.getString("nom");
                 String prenom = res.getString("prenom");
                 String email = res.getString("email");
+                String commune = res.getString("commune");
                 // etc...
 
-                utilisateurs.add(new Utilisateur(id, nom, prenom, email));
+                utilisateurs.add(new Utilisateur(id, nom, prenom, email,commune));
             }
 
             return utilisateurs;
@@ -58,13 +59,14 @@ public class UtilisateurDao {
     public void insertUtilisateur(Utilisateur u) {
         try {
 
-            String query = "insert into utilisateur(nom,prenom,email,mdp) VALUES (?,?,?,?)";
+            String query = "insert into utilisateur(nom,prenom,email,mdp,commune) VALUES (?,?,?,?,?)";
 
             PreparedStatement ps = this.connexion.prepareStatement(query);
             ps.setString(1, u.getNom());
             ps.setString(2, u.getPrenom());
             ps.setString(3, u.getEmail());
             ps.setString(4, "mdp");
+            ps.setString(5, u.getCommune());
 
 //            Utilisateur a = new Utilisateur(u.getNom(), u.getPrenom(), u.getEmail());
 //            utilisateurs.add(a);
@@ -85,7 +87,7 @@ public class UtilisateurDao {
      public void UpdateUtilisateur(Utilisateur ut) {
         try {
 
-            String query = "UPDATE utilisateur SET nom = ?,prenom = ?,email = ?,mdp = ? WHERE id = ?";
+            String query = "UPDATE utilisateur SET nom = ?,prenom = ?,email = ?,mdp = ? ,commune = ? WHERE id = ?";
 
             PreparedStatement ps = this.connexion.prepareStatement(query);
             
@@ -93,7 +95,8 @@ public class UtilisateurDao {
             ps.setString(2, ut.getPrenom());
             ps.setString(3, ut.getEmail());
             ps.setString(4, "mdp");
-            ps.setInt(5, ut.getId());
+            ps.setString(5, ut.getCommune());
+            ps.setInt(6, ut.getId());
             ps.executeUpdate();
 
 //            Utilisateur a = new Utilisateur(u.getNom(), u.getPrenom(), u.getEmail());

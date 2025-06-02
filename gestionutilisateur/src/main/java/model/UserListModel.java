@@ -15,7 +15,7 @@ import javax.swing.table.AbstractTableModel;
 public class UserListModel extends AbstractTableModel {
 
     // tableau des noms de colonne
-    String[] columnNames = {"id", "nom", "prenom","email"};
+    String[] columnNames = {"id", "nom", "prenom","email","commune"};
 
     // arraylist<Utilisateur ou User???>
     private ArrayList<Utilisateur> utilisateurs = new ArrayList<Utilisateur>();
@@ -45,16 +45,16 @@ public class UserListModel extends AbstractTableModel {
     }
     
     
-    public void createUtilisateur(String nom,String prenom ,String email){
-        Utilisateur u = new Utilisateur(nom,prenom,email);
+    public void createUtilisateur(String nom,String prenom ,String email,String commune){
+        Utilisateur u = new Utilisateur(nom,prenom,email,commune);
         this.uDao.insertUtilisateur(u);
         this.utilisateurs=uDao.getAll();
         this.fireTableDataChanged();
     }
     
-    public void modifUtilisateur(Integer idModifier,String nomModifier,String prenomModifier,String emailModifier){
+    public void modifUtilisateur(Integer idModifier,String nomModifier,String prenomModifier,String emailModifier,String communeModifier){
     
-        Utilisateur ut = new Utilisateur(idModifier,nomModifier,prenomModifier,emailModifier);
+        Utilisateur ut = new Utilisateur(idModifier,nomModifier,prenomModifier,emailModifier,communeModifier);
         this.uDao.UpdateUtilisateur(ut);
         this.utilisateurs=uDao.getAll();
         this.fireTableDataChanged();
@@ -83,6 +83,8 @@ public class UserListModel extends AbstractTableModel {
                 return i.getPrenom();
             case 3:
                 return i.getEmail();
+            case 4: 
+                return i.getCommune();
         }
         return null;
     }

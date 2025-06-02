@@ -69,8 +69,9 @@ public class MainControl implements PropertyChangeListener {
                 String nom = this.ajoutDialog.getNom();
                 String prenom = this.ajoutDialog.getPrenom();
                 String email = this.ajoutDialog.getEmail();
+                String commune = this.ajoutDialog.getCommune();
 
-                this.userListModel.createUtilisateur(nom, prenom, email);
+                this.userListModel.createUtilisateur(nom, prenom, email,commune);
 
                 this.ajoutDialog.setVisible(false);
                 
@@ -79,7 +80,8 @@ public class MainControl implements PropertyChangeListener {
                 this.modifDialog.setId(view.getSelectedIdModifier());
                 this.modifDialog.setNom(view.getSelectedNomModifier());
                 this.modifDialog.setPrenom(view.getSelectedprenomModifier());
-                this.modifDialog.setEmail(view.getSelectedEmailModifier());                
+                this.modifDialog.setEmail(view.getSelectedEmailModifier());
+                this.modifDialog.setCommune(view.getSelectedCommuneModifier());                
                 this.modifDialog.setVisible(true);
                 break;
             case  "btnValiderModifierClick":
@@ -87,7 +89,8 @@ public class MainControl implements PropertyChangeListener {
                 String nomModifier = this.modifDialog.getNom();
                 String prenomModifier = this.modifDialog.getPrenom();
                 String emailModifier = this.modifDialog.getEmail();
-                this.userListModel.modifUtilisateur(idModifier, nomModifier, prenomModifier,emailModifier);
+                String communeModifier = this.modifDialog.getCommune();
+                this.userListModel.modifUtilisateur(idModifier, nomModifier, prenomModifier,emailModifier,communeModifier);
 
                 this.modifDialog.setVisible(false);
             case "btnDeleteUtilisateurClick":
