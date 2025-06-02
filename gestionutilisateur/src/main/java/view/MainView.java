@@ -6,6 +6,7 @@ package view;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
 
 /**
@@ -140,7 +141,13 @@ public class MainView extends javax.swing.JFrame {
 
     private void deleteButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButton1ActionPerformed
         // TODO add your handling code here:
-        listeners.firePropertyChange("btnDeleteUtilisateurClick", null, null);
+        int reponse = JOptionPane.showConfirmDialog(null, "Etes vous sur", "confirmation", JOptionPane.YES_NO_OPTION);
+            if(reponse == JOptionPane.YES_OPTION){
+                listeners.firePropertyChange("btnDeleteUtilisateurClick", null, null);
+            }
+            else{
+                System.out.println("suppression annulée ");
+            }
     }//GEN-LAST:event_deleteButton1ActionPerformed
 
 
